@@ -1,0 +1,47 @@
+<!-- <div class="container">
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+
+  <div>
+    Gebruikersnaam : <input type="text" name="username" [(ngModel)]="username">
+    Wachtwoord : <input type="password" name="password" [(ngModel)]="password">
+
+    <button (click)=handleLogin() class="btn btn-success">Inloggen</button>
+  </div>
+</div> -->
+
+<div class="container">
+
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+
+  <!-- Default form login -->
+  <form class="text-center border border-light p-5" action="#!">
+
+    <p class="h4 mb-4">Inloggen</p>
+
+    <!-- Name -->
+    <input type="text" id="defaultLoginFormName" class="form-control mb-4" placeholder="Gebruikersnaam" name="username"
+      [(ngModel)]="username">
+
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Wachtwoord"
+      name="password" [(ngModel)]="password">
+
+    <!-- Sign in button -->
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)= handleJWTAuthLogin()>Inloggen</button>
+
+    <!-- Register -->
+
+    <div class="d-flex justify-content-around">
+      <p>
+        <a href="">Maak een account aan</a>
+      </p>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Wachtwoord vergeten?</a>
+      </div>
+    </div>
+
+  </form>
+  <!-- Default form login -->
+
+</div>

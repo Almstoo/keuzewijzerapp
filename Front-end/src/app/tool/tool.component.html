@@ -1,0 +1,32 @@
+<H1>Tool</H1>
+
+<div class="container">
+
+<div class=" alert alert-warning" *ngIf="toolName.dirty &&toolName.invalid">Enter valid name</div>
+<div class=" alert alert-warning" *ngIf="toolDescription.dirty &&toolDescription.invalid">Enter valid description / minimum 5 characters</div>
+
+  <form (ngSubmit)="!toolForm.invalid && saveTool()" #toolForm="ngForm">
+    <fieldset class="form-group">
+      <label>name</label>
+      <input type="text" 
+      [(ngModel)]="tool.nameHardwareTool" 
+      #toolName="ngModel"
+      class="form-control" 
+      name="name" 
+      required="required">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Description</label>
+      <input type="text" 
+      [(ngModel)]="tool.officialWebpageHardwareTool"
+      #toolDescription="ngModel" 
+      class="form-control" 
+      name="description"
+      required="required" 
+      minlength="5">
+    </fieldset>
+
+    <button type= "submit" class="btn btn-success" >Save</button>
+  </form>
+</div>

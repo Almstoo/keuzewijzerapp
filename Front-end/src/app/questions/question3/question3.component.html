@@ -1,0 +1,79 @@
+<div class="container mb-5">
+
+    <!-- First row  -->
+
+    <div class="row align-items-center justify-content-center">
+
+        <div class="col-sm-4 d-flex justify-content-center bg-primary border rounded mb-3">
+            <div class="w-100 ">
+                <div class="row align-items-center justify-content-center p-0 ">
+                    <h5>Emotioneel welzijn </h5>
+                </div>
+
+                <div class="row align-items-center justify-content-center p-0  ">
+                    <span id="icon" style="color: rgb(255, 238, 85);">
+                        <i class="fas fa-smile fa-7x"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8 d-flex">
+            <h1 class="">
+                <h5>Vraag 3 van 5.</h5>
+                Wat is de gradatie van beperking van de cliënt?
+            </h1>
+        </div>
+
+    </div>
+    <!--End of First row  -->
+
+    <!-- Second row -->
+    <div class="row  ">
+        <div *ngFor="let grade of grades">
+            <label class="form-check-label container mr-5 my-3">
+                <!-- create a radio button -->
+                <input class="form-check-input " type="radio" name="gradeOfgrades" value="{{grade}}"
+                    (change)="radioChangeHandeler($event)">
+                {{grade}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+    </div>
+    <!-- End of second row -->
+
+
+    <!-- third row -->
+
+    <div class="row  my-3  ">
+
+        <div class="col-sm  d-flex justify-content-center mb-2 ">
+
+            <button type="submit" class="btn btn-success" (click)=handleq3()>Volgende</button>
+        </div>
+
+    </div>
+    <!-- End of third row -->
+
+
+    <!-- fourth row -->
+    <div class="row alert alert-warning" *ngIf="check">{{errorMessage}}</div>
+    <!-- End of fourth row -->
+
+    <!-- fifth row -->
+    <div class="row  my-3  ">
+
+        <div class="col mb-2  ">
+
+            <button type="submit" class="btn btn-secondary" (click)=handleTerug()>Terug</button>
+        </div>
+
+        <div class="col mb-2 d-flex justify-content-end ">
+
+            <button type="submit" class="btn btn-danger" (click)=handleOverslaan()>Overslaan</button>
+        </div>
+    </div>
+    <!-- End of fifth row -->
+
+</div>

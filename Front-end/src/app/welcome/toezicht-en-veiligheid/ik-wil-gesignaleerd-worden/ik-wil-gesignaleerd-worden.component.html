@@ -1,0 +1,116 @@
+<div class="container  mb-5">
+
+    <!-- First row  -->
+
+    <div class="row align-items-center justify-content-center">
+
+        <div class="col-sm-4 d-flex justify-content-center bg-primary border rounded mb-3">
+            <div class="w-100 ">
+                <div class="row align-items-center justify-content-center p-0 ">
+                    <h5>Toezichit en veiligheid</h5>
+                </div>
+
+                <div class="row align-items-center justify-content-center p-0  ">
+                    <span id="icon" style="color: rgb(255, 230, 1);">
+                        <i class="fas fa-key fa-7x"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8 d-flex">
+            <!-- <h1 class="">
+                Ik wil een signaal ontvangen...
+            </h1> -->
+        </div>
+
+    </div>
+    <!--End of First row  -->
+
+    <!-- Second row -->
+
+    <div class="row mb-3">
+        <div class="col-sm bg-light " *ngFor="let item of items">
+            <label class="form-check-label container ">
+                <!-- create a radio button -->
+                <input class="form-check-input " type="radio" name="itemofitems" value="{{item.value}}"
+                    (change)="radioChangeHandeler_meteen_naXm($event)">
+                {{item.text}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- End of Second row -->
+
+    <!-- third row /nested row-->
+    <div class="" *ngIf="check_naXm">
+        <h5>Heeft de vraag betrekking op vergeetachtigheid?</h5>
+        <div class="row mb-3">
+            <div class="col-sm bg-light " *ngFor="let item of items2">
+                <label class="form-check-label container ">
+                    <!-- create a radio button -->
+                    <input class="form-check-input " type="radio" name="itemofitems2" value="{{item.value}}"
+                        (change)="radioChangeHandeler_vergeetachtigheid($event)">
+                    {{item.text}}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of third row /nested row -->
+
+    <!-- fourth row /nested row-->
+    <div class="" *ngIf="check_naXm_vergeetachtigheid">
+        <h5>Gaat het over oriëntatie?</h5>
+        <div class="row mb-3">
+            <div class="col-sm bg-light " *ngFor="let item of items2">
+                <label class="form-check-label container ">
+                    <!-- create a radio button -->
+                    <input class="form-check-input " type="radio" name="itemofitems3" value="{{item.value}}"
+                        (change)="radioChangeHandeler_orientatie($event)">
+                    {{item.text}}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of fourth row /nested row -->
+
+    <!-- End of fifth row /nested row -->
+    <div class="" *ngIf="check_meteen">
+        <h5>Gaat het over lichaam?</h5>
+        <div class="row mb-3">
+            <div class="col-sm bg-light " *ngFor="let item of items2">
+                <label class="form-check-label container ">
+                    <!-- create a radio button -->
+                    <input class="form-check-input " type="radio" name="itemofitems4" value="{{item.value}}"
+                        (change)="radioChangeHandeler_meteen_ja_nee($event)">
+                    {{item.text}}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- End of fifth row /nested row -->
+
+
+
+    <!-- sixth row -->
+    <div class="row  my-3  ">
+
+        <div class="col mb-2  ">
+
+            <button type="submit" class="btn btn-secondary" (click)=handleTerug()>Terug</button>
+        </div>
+
+        <div class="col mb-2 d-flex justify-content-end" *ngIf="check_volgende">
+
+            <button type="submit" class="btn btn-success" (click)=handleq1()>Volgende</button>
+        </div>
+    </div>
+    <!-- End of sixth row -->
+
+</div>

@@ -1,0 +1,32 @@
+<h1> My Tools</h1>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tool name</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--   for (Todo todo: todos) {  -->
+            <tr *ngFor="let tool of tools">
+                <td>{{tool.nameHardwareTool}}</td>
+                <td>{{tool.officialWebpageHardwareTool}}</td>
+                <td><button (click)="updateTool(tool.id)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteTool(tool.id)" class="btn btn-warning">Delete</button></td>
+            </tr>
+            <!-- } -->
+        </tbody>
+ 
+    </table>
+
+    <div class="row">
+            <button (click)="addTool()" class="btn btn-success">Add</button>
+        </div>
+
+</div>

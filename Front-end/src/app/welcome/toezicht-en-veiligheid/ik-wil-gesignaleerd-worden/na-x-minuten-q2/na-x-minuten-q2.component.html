@@ -1,0 +1,93 @@
+<div class="container  mb-5">
+
+    <!-- First row  -->
+
+    <div class="row align-items-center justify-content-center">
+
+        <div class="col-sm-4 d-flex justify-content-center bg-primary border rounded mb-3">
+            <div class="w-100 ">
+                <div class="row align-items-center justify-content-center p-0 ">
+                    <h5>Toezichit en veiligheid</h5>
+                </div>
+
+                <div class="row align-items-center justify-content-center p-0  ">
+                    <span id="icon" style="color: rgb(255, 230, 1);">
+                        <i class="fas fa-key fa-7x"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8 d-flex">
+            <h1 class="">
+                Cliënt wil na X aantal minuten gesignaleerd worden...
+            </h1>
+        </div>
+
+    </div>
+    <!--End of First row  -->
+
+    <!-- Second row -->
+
+    <!-- Hide option one -->
+    <div class="row" *ngIf="check_Na_X_Nee">
+        <div *ngFor="let item of items_Na_X_Nee">
+            <label class="form-check-label container mr-5 my-3">
+                <!-- create a radio button -->
+                <input class="form-check-input " type="radio" name="items_Na_X_Nee" value="{{item.value}}"
+                    (change)="radioChangeHandeler_Na_X_Nee($event)">
+                {{item.text}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+    </div>
+    <!-- End of Hide option one -->
+
+
+    <!-- Hide option two -->
+    <div class="row" *ngIf="check_Na_X_Ja_Or_Ja">
+        <div *ngFor="let item of items_Na_X_Ja_Or_Ja">
+            <label class="form-check-label container mr-5 my-3">
+                <!-- create a radio button -->
+                <input class="form-check-input " type="radio" name="items_Na_X_Ja_Or_Ja" value="{{item.value}}"
+                    (change)="radioChangeHandeler_Na_X_Ja_Or_Ja($event)">
+                {{item.text}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <!-- End of Hide option three -->
+
+      <!-- Hide option two -->
+      <div class="row" *ngIf="check_Na_X_Ja_Or_Nee">
+        <div *ngFor="let item of items_Na_X_Ja_Or_Nee">
+            <label class="form-check-label container mr-5 my-3">
+                <!-- create a radio button -->
+                <input class="form-check-input " type="radio" name="items_Na_X_Ja_Or_Nee" value="{{item.value}}"
+                    (change)="radioChangeHandeler_Na_X_Ja_Or_Nee($event)">
+                {{item.text}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <!-- End of Hide option three -->
+
+    <!-- End of Second row -->
+
+    <!-- Third row -->
+    <div class="row  my-3  ">
+
+        <div class="col mb-2  ">
+
+            <button type="submit" class="btn btn-secondary" (click)=handleTerug()>Terug</button>
+        </div>
+
+        <div class="col mb-2 d-flex justify-content-end" *ngIf="check_volgende">
+
+            <button type="submit" class="btn btn-success" (click)=handleq1()>Volgende</button>
+        </div>
+    </div>
+    <!-- End of third row -->
+
+</div>

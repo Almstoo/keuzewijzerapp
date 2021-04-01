@@ -1,0 +1,109 @@
+<div class="container  mb-5">
+
+    <!-- First row  -->
+
+    <div class="row align-items-center justify-content-center">
+
+        <div class="col-sm-4 d-flex justify-content-center bg-primary border rounded mb-3">
+            <div class="w-100 ">
+                <div class="row align-items-center justify-content-center p-0 ">
+                    <h5>Toezichit en veiligheid</h5>
+                </div>
+
+                <div class="row align-items-center justify-content-center p-0  ">
+                    <span id="icon" style="color: rgb(255, 230, 1);">
+                        <i class="fas fa-key fa-7x"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8 d-flex">
+            <h1 class="">
+
+                Cliënt wil een alarm...
+            </h1>
+        </div>
+
+    </div>
+    <!--End of First row  -->
+
+    <!-- Second row -->
+
+    <div class="row mb-3">
+        <div class="col-sm bg-light " *ngFor="let item of items">
+            <label class="form-check-label container ">
+                <!-- create a radio button -->
+                <input class="form-check-input  " type="radio" name="itemofitems" value="{{item.value}}"
+                    (change)="radioChangeHandeler($event)">
+                {{item.text}}
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- End of Second row -->
+
+    <!-- Third row -->
+    <!-- Nested form 1 -->
+
+    <div class="mb-3" *ngIf="check2">
+        <h3>Cliënt wil een alarm geven...</h3>
+        <div class="row ">
+            <div class="col-sm bg-light " *ngFor="let item2 of items2">
+                <label class="form-check-label container ">
+                    <!-- create a radio button -->
+                    <input class="form-check-input" type="radio" name="itemofitems2" value="{{item2.value}}"
+                        (change)="radioChangeHandeler2($event)">
+                    {{item2.text}}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- End of nested form 1-->
+
+    <!-- End of Third row -->
+
+    <!-- fourth row -->
+    <!-- Nested form 2 -->
+
+    <div class="mb-3" *ngIf="check3">
+        <h3>Cliënt wil een alarm ontvangen...</h3>
+        <div class="row ">
+            <div class="col-sm bg-light " *ngFor="let item3 of items3">
+                <label class="form-check-label container ">
+                    <!-- create a radio button -->
+                    <input class="form-check-input " type="radio" name="itemofitems3" value="{{item3.value}}"
+                        (change)="radioChangeHandeler3($event)">
+                    {{item3.text}}
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of nested form 2-->
+
+    <!-- End of fourth row -->
+
+    <!-- fifth row -->
+    <!-- <div class="row alert alert-warning" *ngIf="check">{{errorMessage}}</div> -->
+    <!-- End of fifth row -->
+
+    <!-- sixth row -->
+    <div class="row  my-3  ">
+
+        <div class="col mb-2  ">
+
+            <button type="submit" class="btn btn-secondary" (click)=handleTerug()>Terug</button>
+        </div>
+        <div class="col mb-2 d-flex justify-content-end ">
+
+            <button type="submit" class="btn btn-success" (click)=handleq1() *ngIf="check" >Volgende</button>
+        </div>
+
+    </div>
+    <!-- End of sixth row -->
+
+</div>
